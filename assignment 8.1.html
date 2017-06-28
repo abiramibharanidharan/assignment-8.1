@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+       <head>
+             <title>Assignment 8.1</title>           
+       <style>
+              /*Register box style*/
+             .box1 {
+                     color:block;
+                     float:left;
+                     height:100px;
+                     width:100px;
+                     margin:0 auto;                    
+                   }
+               /*login box style*/
+              .box {
+                    color:block;
+                    float:right;
+                    height:250px;
+                    width:200px;
+                    margin:0 auto;
+                    border:1px solid black;                                  
+                   }
+                 /*main box style*/
+                .pagebox {
+                                        
+                    height:500px;
+                    width:450px;
+                    margin:0 auto;
+                      background-color:blue;
+                      border:3px solid black;
+                    }
+                 /*it is used to clear float*/
+                .clearfix::after
+                   {
+                      content: "";
+                      clear: both;
+                      float:clear;
+                      
+                   }  
+                  /* give color to the text feild*/
+                  input, textarea {
+                       background-color:orange;
+                           }          
+           </style>
+            <script type="text/javascript">
+                /* function to display the message after register*/
+              
+              function formSubmitter(formTag, messageTag)
+                    {
+                      document.getElementById(messageTag).innerHTML = "Register Successfully";
+                      document.forms[formTag].submit();
+                      setTimeout("kk()",3000);
+                    }
+
+              function kk(){
+                    document.forms[0].submit();
+                    }
+
+           </script>
+      </head>
+       <body>
+        
+            <div class="pagebox">
+                 <p>It is necessary to login in your account in order to signup for a course</p>
+                 </br>
+                 <h4> ARE YOU NEW? REGISTER</h4>
+               <div class="clearfix">
+                   <!--register box model-->
+                   <div class="box1">
+                           <input type="text" data="name" placeholder="Username" id="name"></input></br></br>                    
+                           <input type="text" data="email" placeholder="Email" id="email"></input></br></br>
+                           <input type="password" data="pwd" placeholder="Password" id="pwd"></input></br></br>          
+                           <input type="password" data="cpwd" placeholder="ConformPassword" id="pwd"></input></br></br>
+                         <!-- Register click-->
+                          <form action="" name="sampleform" method="post"> 
+                               <input value="Register" type='button' onclick="formSubmitter('sampleform', 'message')"></input>
+                                <div id='message'></div>
+                          </form>
+                    </div>
+                   <!--login box model-->
+                   <div class="box">
+                         <h4>Already A Student Login</h4>
+                         <input type="text" data="email" placeholder="Email" id="email"></input></br></br>
+                         <input type="password" data="pwd" placeholder="Password" id="pwd"></input></br>
+                         <input type="checkbox" id="me" name="Remember me"></input>
+                         <label for="me">Remember me</label>  
+                         <input type="button" value="Login" onclick="location.href='login.html'"></input></br>
+                          <center><a href="forgetpassword.html">forget password</a></center>     
+                   </div>
+                </div>
+           </div>
+     </body>
+</html>
